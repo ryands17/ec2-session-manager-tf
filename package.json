@@ -20,11 +20,11 @@
     "node": ">=10.12"
   },
   "dependencies": {
+    "@cdktf/provider-aws": "^0.0.40",
     "cdktf": "0.0.17",
     "constructs": "^3.0.4"
   },
   "devDependencies": {
-    "@cdktf/provider-aws": "^0.0.40",
     "@types/node": "^14.10.3",
     "cdktf-cli": "0.0.17",
     "dotenv": "^8.2.0",
