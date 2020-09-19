@@ -10,7 +10,7 @@ This is an [cdktf](https://github.com/hashicorp/terraform-cdk/) project where yo
 
 3. Run `yarn cdk deploy --profile profileName` to deploy the stack to your specified region. You can skip providing the profile name if it is `default`. You can learn about creating profiles using the aws-cli [here](https://docs.aws.amazon.com/cli/latest/reference/configure/#configure).
 
-4. Now you can SSH into your newly created EC2 instance with Session Manager without SSH hassels.
+4. Now you can SSH into your newly created EC2 instance with Session Manager without SSH hassels and check that Node has been installed via _User Data_.
 
 The `cdktf.json` file tells the CDK Toolkit how to execute your app.
 
