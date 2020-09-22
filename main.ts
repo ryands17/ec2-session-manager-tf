@@ -9,13 +9,10 @@ const tagName = 'session-manager'
 const userData = `
   #!/bin/bash
   set -eu -o pipefail
-  touch /home/ubuntu/before.txt
   apt-get update && apt-get upgrade -y
   apt-get install build-essential -y
-  touch /home/ubuntu/middle.txt
   curl -sL https://deb.nodesource.com/setup_12.x | bash -
   apt-get install nodejs -y
-  touch /home/ubuntu/after.txt
 `
 
 class EC2Session extends TerraformStack {
@@ -127,7 +124,6 @@ class EC2Session extends TerraformStack {
 
     new aws.Instance(this, `${tagName}-instance`, {
       ami: Token.asString(ami.id),
-      // ami: 'ami-07efac79022b86107',
       instanceType: 't2.micro',
       associatePublicIpAddress: true,
       iamInstanceProfile: Token.asString(instanceProfile.name),
